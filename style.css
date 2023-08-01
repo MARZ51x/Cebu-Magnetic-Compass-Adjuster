@@ -1,0 +1,37 @@
+/* styles.css */
+
+.title-container {
+    justify-content: center; /* Horizontal center */
+    align-items: center; /* Vertical center */
+    width: 100%;
+}
+
+.title {
+    text-align: center; /* Optional: Center text inside the div */
+    font-size: 70px;
+    font-family: "Hikou", sans-serif;
+    font-weight: bold;
+    color: #000; /* Text color */
+    text-shadow: 4px 4px 6px rgba(180, 108, 54, 1); /* Horizontal offset, Vertical offset, Blur radius, Shadow color */
+}
+
+
+.body-container {
+    justify-content: left; /* Horizontal center */
+    padding-left: 8%;
+    padding-right: 6%;
+}
+
+.body {
+    text-align: left; /* Optional: Center text inside the div */
+    font-size: 30px;
+    font-family: "Hikou", sans-serif;
+}
+
+.link{
+    color: blue;
+}
+
+.phone{
+    text-decoration: underline;
+}
