@@ -35,3 +35,45 @@
 .phone{
     text-decoration: underline;
 }
+
+.photo-container {
+    display: flex;
+    overflow: hidden; /* Hide overflowing images */
+    align-items: center;
+    justify-content: center;
+    /*  animation: roundRobin 12s infinite; Animation name, duration, and loop */
+}
+
+/*@keyframes roundRobin {
+    0%, 10% {
+        transform: translateX(0);
+    }
+    30%, 40% {
+        transform: translateX(-40%);
+    }
+
+    0%, 10% {
+        transform: translateX(20);
+    }
+    30%, 40% {
+        transform: translateX(40%);
+    }
+}*/
+
+.photo-container img {
+    width: 300px; /* Set the desired width of the circular images */
+    height: 300px; /* Set the desired height of the circular images */
+    margin: 5px; /* Optional: Add margin to separate the images */
+    border-radius: 5%;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5); /* Horizontal offset, Vertical offset, Blur radius, Shadow color */
+}
+
+.outlined-table {
+    border: 1px solid #000; /* Set border width and color */
+    border-collapse: collapse; /* Optional: Collapse the table borders for a cleaner look */
+}
+
+.outlined-table th, .outlined-table td {
+    border: 1px solid #000; /* Set border width and color for table cells */
+    padding: 8px; /* Optional: Add some padding for better visual appearance */
+}
