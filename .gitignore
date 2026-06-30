@@ -1,0 +1,3 @@
+# Ship pipeline scratch + local tooling artifacts
+.pipeline/
+.claude/
