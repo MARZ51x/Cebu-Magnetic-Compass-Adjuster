@@ -1,367 +1,586 @@
 <!DOCTYPE html>
-
-<html lang="en"><head>
+<html lang="en">
+<head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Cebu Magnetic Compass Adjuster</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Cebu Magnetic Compass Adjuster — Capt. Lan | Certified Maritime Services</title>
+<meta name="description" content="Certified magnetic compass adjustment and deviation card certification for vessels. Based in Cebu, Philippines — serving ports worldwide. Contact Capt. Lan."/>
+<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23C5A059'&gt;&lt;path d='M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.5 5.5-2.6 6.4-6.4 2.6 2.6-6.4 6.4-2.6Z'/&gt;&lt;/svg&gt;"/>
+<script>
+  // Apply theme before paint to avoid flash
+  (function () {
+    var saved = localStorage.getItem("theme");
+    var dark = saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (dark) document.documentElement.classList.add("dark");
+  })();
+</script>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Source+Serif+4:wght@400;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "background": "#f7f9fb",
-                      "inverse-on-surface": "#eff1f3",
-                      "on-error-container": "#93000a",
-                      "on-secondary-fixed-variant": "#5d4201",
-                      "on-surface": "#191c1e",
-                      "surface-container-high": "#e6e8ea",
-                      "on-background": "#191c1e",
-                      "surface-container": "#eceef0",
-                      "tertiary-fixed-dim": "#bcc7dd",
-                      "on-secondary-container": "#785a1a",
-                      "surface-container-lowest": "#ffffff",
-                      "on-primary": "#ffffff",
-                      "on-primary-container": "#6f84ac",
-                      "error": "#ba1a1a",
-                      "secondary-container": "#fed488",
-                      "on-tertiary-container": "#798499",
-                      "surface-dim": "#d8dadc",
-                      "surface-container-highest": "#e0e3e5",
-                      "surface-bright": "#f7f9fb",
-                      "tertiary-container": "#111c2d",
-                      "on-secondary": "#ffffff",
-                      "on-tertiary-fixed": "#111c2c",
-                      "surface-tint": "#495f84",
-                      "secondary-fixed-dim": "#e9c176",
-                      "outline": "#74777f",
-                      "on-secondary-fixed": "#261900",
-                      "on-tertiary": "#ffffff",
-                      "on-primary-fixed": "#001b3d",
-                      "primary": "#000000",
-                      "surface-container-low": "#f2f4f6",
-                      "surface": "#f7f9fb",
-                      "inverse-surface": "#2d3133",
-                      "on-surface-variant": "#44474e",
-                      "on-error": "#ffffff",
-                      "primary-fixed-dim": "#b1c7f2",
-                      "secondary-fixed": "#ffdea5",
-                      "tertiary-fixed": "#d8e3fa",
-                      "on-tertiary-fixed-variant": "#3c475a",
-                      "inverse-primary": "#b1c7f2",
-                      "on-primary-fixed-variant": "#31476b",
-                      "primary-fixed": "#d6e3ff",
-                      "secondary": "#775a19",
-                      "primary-container": "#001b3d",
-                      "error-container": "#ffdad6",
-                      "tertiary": "#000001",
-                      "outline-variant": "#c4c6cf",
-                      "surface-variant": "#e0e3e5"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.125rem",
-                      "lg": "0.25rem",
-                      "xl": "0.5rem",
-                      "full": "0.75rem"
-              },
-              "spacing": {
-                      "margin-mobile": "20px",
-                      "margin-desktop": "64px",
-                      "unit": "8px",
-                      "gutter": "24px",
-                      "container-max": "1280px"
-              },
-              "fontFamily": {
-                      "body-md": [
-                              "\"Source Serif 4\""
-                      ],
-                      "label-md": [
-                              "Hanken Grotesk"
-                      ],
-                      "headline-md": [
-                              "Hanken Grotesk"
-                      ],
-                      "headline-xl": [
-                              "Hanken Grotesk"
-                      ],
-                      "body-lg": [
-                              "\"Source Serif 4\""
-                      ],
-                      "headline-lg": [
-                              "Hanken Grotesk"
-                      ]
-              },
-              "fontSize": {
-                      "body-md": [
-                              "16px",
-                              {
-                                      "lineHeight": "24px",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "label-md": [
-                              "14px",
-                              {
-                                      "lineHeight": "20px",
-                                      "letterSpacing": "0.05em",
-                                      "fontWeight": "600"
-                              }
-                      ],
-                      "headline-md": [
-                              "24px",
-                              {
-                                      "lineHeight": "32px",
-                                      "fontWeight": "600"
-                              }
-                      ],
-                      "headline-xl": [
-                              "48px",
-                              {
-                                      "lineHeight": "56px",
-                                      "letterSpacing": "-0.02em",
-                                      "fontWeight": "700"
-                              }
-                      ],
-                      "body-lg": [
-                              "18px",
-                              {
-                                      "lineHeight": "28px",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "headline-lg": [
-                              "32px",
-                              {
-                                      "lineHeight": "40px",
-                                      "fontWeight": "600"
-                              }
-                      ]
-              }
-      },
-          },
-        }
-      </script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          surface:        "var(--c-surface)",
+          "surface-2":    "var(--c-surface-2)",
+          "surface-3":    "var(--c-surface-3)",
+          card:           "var(--c-card)",
+          ink:            "var(--c-ink)",
+          "ink-muted":    "var(--c-ink-muted)",
+          navy:           "var(--c-navy)",
+          "on-navy":      "var(--c-on-navy)",
+          "on-navy-muted":"var(--c-on-navy-muted)",
+          brass:          "var(--c-brass)",
+          "brass-strong": "var(--c-brass-strong)",
+          "on-brass":     "var(--c-on-brass)",
+          "cta":          "var(--c-cta-bg)",
+          "on-cta":       "var(--c-cta-fg)",
+          line:           "var(--c-line)"
+        },
+        fontFamily: {
+          display: ["'Hanken Grotesk'", "system-ui", "sans-serif"],
+          serif:   ["'Source Serif 4'", "Georgia", "serif"]
+        },
+        borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem" },
+        maxWidth: { container: "1280px" }
+      }
+    }
+  };
+</script>
 <style>
-        .brass-border {
-            border-color: #775a19;
-        }
-        .brass-text {
-            color: #775a19;
-        }
-        .brass-bg {
-            background-color: #775a19;
-        }
-        .ambient-shadow {
-            box-shadow: 0 4px 20px rgba(0, 27, 61, 0.05);
-        }
-      </style>
+  :root {
+    --c-surface: #f7f9fb;
+    --c-surface-2: #eef1f5;
+    --c-surface-3: #e4e8ee;
+    --c-card: #ffffff;
+    --c-ink: #16202c;
+    --c-ink-muted: #4a5568;
+    --c-navy: #001b3d;
+    --c-on-navy: #f5f8fc;
+    --c-on-navy-muted: #a9bcd6;
+    --c-brass: #8a6a24;
+    --c-brass-strong: #6f5417;
+    --c-on-brass: #ffffff;
+    --c-cta-bg: #001b3d;
+    --c-cta-fg: #f5f8fc;
+    --c-line: rgba(74, 85, 104, 0.22);
+    --shadow-ambient: 0 4px 24px rgba(0, 27, 61, 0.07);
+    --shadow-lift: 0 12px 32px rgba(0, 27, 61, 0.12);
+  }
+  .dark {
+    --c-surface: #0b1220;
+    --c-surface-2: #101a2c;
+    --c-surface-3: #16223a;
+    --c-card: #101a2c;
+    --c-ink: #e6ecf5;
+    --c-ink-muted: #9aa8bd;
+    --c-navy: #08101d;
+    --c-on-navy: #eef3fa;
+    --c-on-navy-muted: #8fa3c0;
+    --c-brass: #d9b56b;
+    --c-brass-strong: #e7c886;
+    --c-on-brass: #241a05;
+    --c-cta-bg: #b1c7f2;
+    --c-cta-fg: #001b3d;
+    --c-line: rgba(154, 168, 189, 0.22);
+    --shadow-ambient: 0 4px 24px rgba(0, 0, 0, 0.35);
+    --shadow-lift: 0 12px 32px rgba(0, 0, 0, 0.5);
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--c-surface); color: var(--c-ink); }
+  body, .theme-surface { transition: background-color .3s ease, color .3s ease, border-color .3s ease; }
+  .ambient-shadow { box-shadow: var(--shadow-ambient); }
+  .lift-shadow { box-shadow: var(--shadow-lift); }
+
+  /* Scroll reveal */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease-out, transform .6s ease-out; }
+  .reveal.is-visible { opacity: 1; transform: none; }
+  .reveal-delay-1 { transition-delay: .1s; }
+  .reveal-delay-2 { transition-delay: .2s; }
+  .reveal-delay-3 { transition-delay: .3s; }
+
+  /* Compass rose slow spin */
+  @keyframes rose-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  .rose-spin { animation: rose-spin 90s linear infinite; }
+
+  /* Card hover */
+  .hover-lift { transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+  .hover-lift:hover { transform: translateY(-4px); box-shadow: var(--shadow-lift); }
+
+  /* Theme toggle icon swap */
+  .dark .icon-sun { display: inline-block; }
+  .dark .icon-moon { display: none; }
+  .icon-sun { display: none; }
+  .icon-moon { display: inline-block; }
+
+  /* Header state on scroll */
+  .header-scrolled { box-shadow: var(--shadow-ambient); backdrop-filter: blur(8px); }
+
+  /* Nav active link */
+  .nav-link { position: relative; }
+  .nav-link::after { content: ""; position: absolute; left: 0; right: 100%; bottom: -6px; height: 2px; background: var(--c-brass); transition: right .25s ease; }
+  .nav-link:hover::after, .nav-link.active::after { right: 0; }
+
+  /* Lightbox */
+  #lightbox { transition: opacity .25s ease; }
+
+  /* Focus visibility */
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--c-brass); outline-offset: 3px; border-radius: 2px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .rose-spin { animation: none; }
+    .hover-lift, .hover-lift:hover { transform: none; }
+    * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+  }
+</style>
 </head>
-<body class="bg-background text-on-background font-body-md antialiased selection:bg-secondary selection:text-on-secondary">
-<!-- Top Navigation -->
-<header class="bg-surface dark:bg-surface-container-highest docked full-width top-0 z-50 sticky">
-<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-20 border-b border-outline-variant/20 dark:border-outline/20">
-<div class="font-headline-md text-headline-md font-bold tracking-tight text-primary dark:text-primary-fixed">
-                CEBU COMPASS
-            </div>
-<nav class="hidden md:flex gap-8">
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200 font-label-md text-label-md" href="#services">Services</a>
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200 font-label-md text-label-md" href="#credentials">Credentials</a>
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200 font-label-md text-label-md" href="#reports">Adjustment Reports</a>
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200 font-label-md text-label-md" href="#contact">Contact</a>
-</nav>
-<div class="hidden md:block">
-<a class="bg-primary text-on-primary px-6 py-3 rounded hover:bg-primary-fixed-dim transition-colors duration-200 font-label-md text-label-md inline-block" href="#contact">Request Adjustment</a>
-</div>
-<button class="md:hidden text-primary">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
-</button>
-</div>
+<body class="font-serif antialiased selection:bg-brass selection:text-on-brass">
+
+<!-- Skip link -->
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] bg-navy text-on-navy px-4 py-2 rounded">Skip to main content</a>
+
+<!-- Header -->
+<header id="site-header" class="theme-surface sticky top-0 z-50 bg-surface/90">
+  <div class="flex justify-between items-center w-full px-5 md:px-16 max-w-container mx-auto h-20 border-b border-line">
+    <a href="#top" class="flex items-center gap-3 font-display font-bold text-xl tracking-tight text-ink">
+      <svg class="w-8 h-8 text-brass rose-spin" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18.5A8.5 8.5 0 1 1 12 3.5a8.5 8.5 0 0 1 0 17Zm4.5-13-2.6 6.4-6.4 2.6 2.6-6.4 6.4-2.6ZM12 13a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
+      </svg>
+      CEBU COMPASS
+    </a>
+    <nav class="hidden md:flex gap-8 font-display text-sm font-semibold tracking-wide" aria-label="Primary">
+      <a class="nav-link text-ink-muted hover:text-brass transition-colors duration-200" href="#services">Services</a>
+      <a class="nav-link text-ink-muted hover:text-brass transition-colors duration-200" href="#process">Process</a>
+      <a class="nav-link text-ink-muted hover:text-brass transition-colors duration-200" href="#credentials">Credentials</a>
+      <a class="nav-link text-ink-muted hover:text-brass transition-colors duration-200" href="#contact">Contact</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <button id="theme-toggle" type="button" aria-label="Toggle dark mode"
+        class="w-11 h-11 inline-flex items-center justify-center rounded-lg border border-line text-ink hover:border-brass hover:text-brass transition-colors duration-200 cursor-pointer">
+        <span class="material-symbols-outlined icon-moon" aria-hidden="true">dark_mode</span>
+        <span class="material-symbols-outlined icon-sun" aria-hidden="true">light_mode</span>
+      </button>
+      <a class="hidden md:inline-block bg-cta text-on-cta px-6 py-3 rounded font-display text-sm font-semibold tracking-wide hover:opacity-90 transition-opacity duration-200" href="#contact">Request Adjustment</a>
+      <button id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"
+        class="md:hidden w-11 h-11 inline-flex items-center justify-center rounded-lg border border-line text-ink cursor-pointer">
+        <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile menu -->
+  <nav id="mobile-menu" class="hidden md:hidden theme-surface bg-surface border-b border-line px-5 py-4" aria-label="Mobile">
+    <div class="flex flex-col gap-1 font-display font-semibold">
+      <a class="py-3 px-2 rounded text-ink-muted hover:text-brass hover:bg-surface-2 transition-colors" href="#services">Services</a>
+      <a class="py-3 px-2 rounded text-ink-muted hover:text-brass hover:bg-surface-2 transition-colors" href="#process">Process</a>
+      <a class="py-3 px-2 rounded text-ink-muted hover:text-brass hover:bg-surface-2 transition-colors" href="#credentials">Credentials</a>
+      <a class="py-3 px-2 rounded text-ink-muted hover:text-brass hover:bg-surface-2 transition-colors" href="#contact">Contact</a>
+      <a class="mt-2 bg-cta text-on-cta text-center px-6 py-3 rounded hover:opacity-90 transition-opacity" href="#contact">Request Adjustment</a>
+    </div>
+  </nav>
 </header>
-<!-- Hero Section -->
-<section class="relative w-full overflow-hidden bg-surface-container-lowest border-b border-outline-variant/20 pt-16 pb-32">
-<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-<div class="max-w-2xl">
-<span class="inline-block px-3 py-1 mb-6 border border-secondary text-secondary font-label-md text-label-md rounded text-sm uppercase tracking-wider bg-secondary/10">Certified Maritime Adjuster</span>
-<h1 class="font-headline-xl text-headline-xl text-primary mb-6 leading-tight">Precision at Sea:<br/>Professional Magnetic Compass Adjustment</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl">Cebu-based maritime certification and adjustment services for vessels worldwide. Ensuring accuracy and compliance for safe navigation.</p>
-<div class="flex flex-col sm:flex-row gap-4">
-<a class="bg-primary text-on-primary px-8 py-4 rounded font-label-md text-label-md hover:opacity-90 transition-opacity text-center flex items-center justify-center gap-2" href="#contact">
-<span>Contact Capt. Lan</span>
-<span class="material-symbols-outlined text-sm">arrow_forward</span>
-</a>
-<a class="border border-secondary text-secondary px-8 py-4 rounded font-label-md text-label-md hover:bg-secondary/5 transition-colors text-center" href="#services">View Services</a>
-</div>
-</div>
-<div class="relative h-[500px] w-full rounded-lg overflow-hidden border border-outline-variant/30 ambient-shadow">
-<!-- Image 4 was specified, assuming it's one of the provided ones or a generic placeholder -->
-<img class="absolute inset-0 w-full h-full object-cover" data-alt="A close up of a polished brass magnetic compass binnacle on the deck of a ship, bright sunlight, clear blue sky, sharp focus on the precision instruments." src="resources/image_enhanced.png"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
-<div class="absolute bottom-6 left-6 right-6">
-<div class="bg-surface-container-lowest/90 backdrop-blur p-4 border-t-2 border-secondary rounded shadow-sm">
-<p class="font-label-md text-label-md text-primary flex items-center gap-2">
-<span class="material-symbols-outlined text-secondary">verified</span>
-                                CA20230101 Certified
-                            </p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Services Grid -->
-<section class="py-24 bg-surface" id="services">
-<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-<div class="mb-16 md:w-2/3">
-<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Core Services</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant">Specialized calibration and certification for maritime compass systems, adhering to international standards.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-<!-- Service 1 -->
-<div class="bg-surface-container-lowest border border-outline-variant/20 rounded-lg p-8 relative overflow-hidden group hover:border-secondary transition-colors duration-300 ambient-shadow border-t-2 border-t-secondary">
-<div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity pointer-events-none">
-<span class="material-symbols-outlined text-8xl" style="font-variation-settings: 'FILL' 1;">explore</span>
-</div>
-<div class="w-16 h-16 bg-surface mb-6 flex items-center justify-center rounded border border-outline-variant/30 overflow-hidden">
-<img alt="Compass Adjustment" class="w-full h-full object-cover opacity-80 mix-blend-multiply" src="resources/3.JPG"/>
-</div>
-<h3 class="font-headline-md text-headline-md text-primary mb-3">Magnetic Compass Adjustment</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-6">On-board swinging of the vessel to determine and correct compass deviation. Precise adjustments made to compensating magnets and soft iron correctors.</p>
-</div>
-<!-- Service 2 -->
-<div class="bg-surface-container-lowest border border-outline-variant/20 rounded-lg p-8 relative overflow-hidden group hover:border-secondary transition-colors duration-300 ambient-shadow">
-<div class="w-12 h-12 bg-surface mb-6 flex items-center justify-center rounded border border-outline-variant/30">
-<span class="material-symbols-outlined text-secondary text-2xl">workspace_premium</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-primary mb-3">Certification</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-6">Issuance of official deviation cards and the CA20230101 certificate, accepted by maritime authorities worldwide for compliance.</p>
-</div>
-</div>
-</div>
-</section><section class="py-24 bg-surface-container-low border-y border-outline-variant/20" id="process"><div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop"><div class="mb-16 text-center"><h2 class="font-headline-lg text-headline-lg text-primary mb-4">Service in Action</h2><p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">A glimpse into our meticulous adjustment process, ensuring every vessel meets the highest standards of navigational safety.</p></div><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6"><div class="group"><div class="aspect-[3/4] rounded-lg overflow-hidden border border-outline-variant/30 mb-4 ambient-shadow"><img alt="Compass Inspection" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" src="resources/3.JPG"/></div><p class="font-label-md text-label-md text-primary text-center">Compass Inspection</p></div><div class="group"><div class="aspect-[3/4] rounded-lg overflow-hidden border border-outline-variant/30 mb-4 ambient-shadow"><img alt="Fine Tuning" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" src="resources/1.JPG"/></div><p class="font-label-md text-label-md text-primary text-center">Fine Tuning</p></div><div class="group"><div class="aspect-[3/4] rounded-lg overflow-hidden border border-outline-variant/30 mb-4 ambient-shadow"><img alt="Deviation Analysis" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" src="resources/2.JPG"/></div><p class="font-label-md text-label-md text-primary text-center">Deviation Analysis</p></div><div class="group"><div class="aspect-[3/4] rounded-lg overflow-hidden border border-outline-variant/30 mb-4 ambient-shadow"><img alt="Official Verification" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" src="resources/image_enhanced.png"/></div><p class="font-label-md text-label-md text-primary text-center">Official Verification</p></div></div></div></section>
-<!-- Credentials Section -->
-<section class="py-24 bg-surface-container-lowest border-y border-outline-variant/20" id="credentials">
-<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-<div class="lg:col-span-5 relative"><div class="relative aspect-square rounded-full overflow-hidden border-4 border-secondary ambient-shadow max-w-md mx-auto"><img alt="Capt. Lan Profile" class="w-full h-full object-cover" src="resources/1690179667182.jpg"/></div></div>
-<div class="lg:col-span-7">
-<span class="text-secondary font-label-md text-label-md uppercase tracking-wider mb-2 block">Professional Credentials</span>
-<h2 class="font-headline-xl text-headline-xl text-primary mb-6">Capt. Lan</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 border-l-2 border-secondary pl-6">
-                        "Precision is not an option in maritime navigation; it is the absolute standard. We ensure your instruments point true, wherever your voyage takes you."
-                    </p>
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
-<div class="flex items-start gap-4 p-4 border border-outline-variant/20 rounded bg-surface">
-<span class="material-symbols-outlined text-secondary mt-1">military_tech</span>
-<div>
-<h4 class="font-label-md text-label-md text-primary mb-1">Certified Adjuster</h4>
-<p class="font-body-md text-body-md text-on-surface-variant text-sm">Holding CA20230101 Certification</p>
-</div>
-</div>
-<div class="flex items-start gap-4 p-4 border border-outline-variant/20 rounded bg-surface">
-<span class="material-symbols-outlined text-secondary mt-1">school</span>
-<div>
-<h4 class="font-label-md text-label-md text-primary mb-1">Official Training</h4>
-<p class="font-body-md text-body-md text-on-surface-variant text-sm">Trained by internationally accepted agencies.</p>
-</div>
-</div>
-</div>
-<div class="bg-surface-container-high/50 p-6 rounded border border-outline-variant/20">
-<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2">
-<span class="material-symbols-outlined text-primary text-xl">info</span>
-                            Credentials are fully documented and available for immediate review for any inquiry, audit, or port state inspection.
-                        </p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Contact & Service Area -->
-<section class="py-24 bg-surface relative" id="contact">
-<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-<div class="bg-primary text-on-primary rounded-xl overflow-hidden shadow-2xl relative">
-<!-- Abstract decorative element mimicking compass lines -->
-<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 70% 30%, #ffffff 1px, transparent 1px); background-size: 40px 40px;"></div>
-<div class="grid grid-cols-1 md:grid-cols-2">
-<div class="p-12 md:p-16 relative z-10">
-<h2 class="font-headline-lg text-headline-lg mb-4">Request Service</h2>
-<p class="font-body-md text-body-md text-on-primary-container mb-10">Contact us to schedule an adjustment or verify credentials.</p>
-<div class="space-y-6">
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-full bg-surface-container-lowest/10 flex items-center justify-center border border-surface-container-lowest/20">
-<span class="material-symbols-outlined text-secondary">mail</span>
-</div>
-<div>
-<p class="font-label-md text-label-md text-on-primary-container uppercase text-xs mb-1">Email</p>
-<a class="font-headline-md text-headline-md hover:text-secondary transition-colors" href="mailto:cebucompassadjuster@gmail.com">cebucompassadjuster@gmail.com</a>
-</div>
-</div>
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-full bg-surface-container-lowest/10 flex items-center justify-center border border-surface-container-lowest/20">
-<span class="material-symbols-outlined text-secondary">phone</span>
-</div>
-<div>
-<p class="font-label-md text-label-md text-on-primary-container uppercase text-xs mb-1">Phone</p>
-<a class="font-headline-md text-headline-md hover:text-secondary transition-colors" href="tel:+639691269353">+63-969-126-9353</a>
-</div>
-</div>
-</div>
-</div>
-<div class="bg-surface-container-lowest text-on-surface p-12 md:p-16 flex flex-col justify-center border-l border-outline-variant/20 relative z-10">
-<div class="mb-8">
-<span class="material-symbols-outlined text-4xl text-secondary mb-4 block" style="font-variation-settings: 'FILL' 1;">location_on</span>
-<h3 class="font-headline-md text-headline-md text-primary mb-2">Based in Cebu, Philippines</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Strategically located to serve major ports.</p>
-</div>
-<div class="border-t border-outline-variant/30 pt-6">
-<h4 class="font-label-md text-label-md text-primary mb-3">Global Reach</h4>
-<p class="font-body-md text-body-md text-on-surface-variant">Available to travel to other locations upon request for in-person adjustments.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Footer -->
-<footer class="bg-inverse-surface dark:bg-surface-container-lowest border-t-2 border-secondary full-width">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-16 max-w-container-max mx-auto">
-<div class="col-span-1 md:col-span-1">
-<div class="font-headline-md text-headline-md font-bold text-inverse-on-surface dark:text-on-surface mb-6">
-                    CEBU COMPASS
-                </div>
-<p class="font-body-md text-body-md text-surface-variant dark:text-on-surface-variant text-sm mb-6">
-                    Professional Maritime Certification.
-                </p>
-</div>
-<div class="col-span-1">
-<h4 class="font-label-md text-label-md text-inverse-on-surface dark:text-on-surface mb-4 uppercase tracking-wider">Services</h4>
-<ul class="space-y-3">
-<li><a class="font-body-md text-body-md text-surface-variant dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-200" href="#">Magnetic Compass Adjustment</a></li>
-<li><a class="font-body-md text-body-md text-surface-variant dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-200" href="#">CA20230101 Certification</a></li>
-</ul>
-</div>
-<div class="col-span-1">
-<h4 class="font-label-md text-label-md text-inverse-on-surface dark:text-on-surface mb-4 uppercase tracking-wider">Location</h4>
-<ul class="space-y-3">
-<li class="font-body-md text-body-md text-surface-variant dark:text-on-surface-variant">Cebu, Philippines</li>
-</ul>
-</div>
-<div class="col-span-1">
-<h4 class="font-label-md text-label-md text-inverse-on-surface dark:text-on-surface mb-4 uppercase tracking-wider">Contact</h4>
-<ul class="space-y-3">
-<li><a class="font-body-md text-body-md text-surface-variant dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-200" href="tel:+639691269353">+63-969-126-9353</a></li>
-<li><a class="font-body-md text-body-md text-surface-variant dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-200" href="mailto:cebucompassadjuster@gmail.com">cebucompassadjuster@gmail.com</a></li>
-</ul>
-</div>
-</div>
-<div class="border-t border-surface-variant/20 px-margin-mobile md:px-margin-desktop py-6 text-center">
-<p class="font-body-md text-body-md text-surface-variant dark:text-on-surface-variant text-sm">
-                © 2024 Cebu Magnetic Compass Adjuster. Professional Maritime Certification.
+
+<main id="main">
+<!-- Hero -->
+<section id="top" class="theme-surface relative w-full overflow-hidden bg-card border-b border-line pt-16 pb-24 md:pb-32">
+  <svg class="absolute -right-32 -top-32 w-[500px] h-[500px] text-brass opacity-[0.06] rose-spin pointer-events-none" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18.5A8.5 8.5 0 1 1 12 3.5a8.5 8.5 0 0 1 0 17Zm4.5-13-2.6 6.4-6.4 2.6 2.6-6.4 6.4-2.6Z"/>
+  </svg>
+  <div class="max-w-container mx-auto px-5 md:px-16 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="max-w-2xl">
+        <span class="reveal inline-flex items-center gap-2 px-3 py-1.5 mb-6 border border-brass text-brass font-display text-xs font-semibold rounded uppercase tracking-wider bg-brass/10">
+          <span class="material-symbols-outlined text-base" aria-hidden="true">verified</span>
+          Certified Maritime Adjuster
+        </span>
+        <h1 class="reveal reveal-delay-1 font-display text-4xl md:text-5xl lg:text-[52px] font-bold text-ink mb-6 leading-tight tracking-tight">
+          Precision at Sea:<br/>Professional Magnetic Compass Adjustment
+        </h1>
+        <p class="reveal reveal-delay-2 text-lg leading-relaxed text-ink-muted mb-10 max-w-xl">
+          Cebu-based maritime certification and adjustment services for vessels worldwide. Ensuring accuracy and compliance for safe navigation.
+        </p>
+        <div class="reveal reveal-delay-3 flex flex-col sm:flex-row gap-4">
+          <a class="bg-cta text-on-cta px-8 py-4 rounded font-display text-sm font-semibold tracking-wide hover:opacity-90 transition-opacity text-center inline-flex items-center justify-center gap-2 cursor-pointer" href="#contact">
+            <span>Contact Capt. Lan</span>
+            <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_forward</span>
+          </a>
+          <a class="border border-brass text-brass px-8 py-4 rounded font-display text-sm font-semibold tracking-wide hover:bg-brass/10 transition-colors text-center cursor-pointer" href="#services">View Services</a>
+        </div>
+        <!-- Stats -->
+        <div class="reveal reveal-delay-3 grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-line max-w-lg">
+          <div>
+            <p class="font-display text-3xl font-bold text-ink"><span class="stat-count" data-target="15">0</span>+</p>
+            <p class="text-sm text-ink-muted mt-1">Years at Sea</p>
+          </div>
+          <div>
+            <p class="font-display text-3xl font-bold text-ink"><span class="stat-count" data-target="200">0</span>+</p>
+            <p class="text-sm text-ink-muted mt-1">Vessels Adjusted</p>
+          </div>
+          <div>
+            <p class="font-display text-3xl font-bold text-ink"><span class="stat-count" data-target="100">0</span>%</p>
+            <p class="text-sm text-ink-muted mt-1">Compliance Rate</p>
+          </div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2 relative h-[420px] md:h-[500px] w-full rounded-lg overflow-hidden border border-line ambient-shadow">
+        <img class="absolute inset-0 w-full h-full object-cover" alt="Polished brass magnetic compass binnacle on the deck of a ship" src="resources/image_enhanced.png"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-navy/50 to-transparent"></div>
+        <div class="absolute bottom-6 left-6 right-6">
+          <div class="theme-surface bg-card/90 backdrop-blur p-4 border-t-2 border-brass rounded shadow-sm">
+            <p class="font-display text-sm font-semibold text-ink flex items-center gap-2">
+              <span class="material-symbols-outlined text-brass" aria-hidden="true">verified</span>
+              CA20230101 Certified
             </p>
-</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="theme-surface py-24 bg-surface" id="services">
+  <div class="max-w-container mx-auto px-5 md:px-16">
+    <div class="reveal mb-16 md:w-2/3">
+      <span class="text-brass font-display text-xs font-semibold uppercase tracking-wider mb-2 block">What We Do</span>
+      <h2 class="font-display text-3xl md:text-4xl font-semibold text-ink mb-4">Core Services</h2>
+      <p class="text-lg leading-relaxed text-ink-muted">Specialized calibration and certification for maritime compass systems, adhering to international standards.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="reveal hover-lift theme-surface bg-card border border-line rounded-lg p-8 relative overflow-hidden group border-t-2 border-t-brass ambient-shadow">
+        <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity pointer-events-none text-brass">
+          <span class="material-symbols-outlined text-8xl" style="font-variation-settings: 'FILL' 1;" aria-hidden="true">explore</span>
+        </div>
+        <div class="w-14 h-14 bg-brass/10 mb-6 flex items-center justify-center rounded-lg border border-brass/30">
+          <span class="material-symbols-outlined text-brass text-3xl" aria-hidden="true">explore</span>
+        </div>
+        <h3 class="font-display text-2xl font-semibold text-ink mb-3">Magnetic Compass Adjustment</h3>
+        <p class="leading-relaxed text-ink-muted">On-board swinging of the vessel to determine and correct compass deviation. Precise adjustments made to compensating magnets and soft iron correctors.</p>
+      </div>
+      <div class="reveal reveal-delay-1 hover-lift theme-surface bg-card border border-line rounded-lg p-8 relative overflow-hidden group border-t-2 border-t-brass ambient-shadow">
+        <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity pointer-events-none text-brass">
+          <span class="material-symbols-outlined text-8xl" style="font-variation-settings: 'FILL' 1;" aria-hidden="true">workspace_premium</span>
+        </div>
+        <div class="w-14 h-14 bg-brass/10 mb-6 flex items-center justify-center rounded-lg border border-brass/30">
+          <span class="material-symbols-outlined text-brass text-3xl" aria-hidden="true">workspace_premium</span>
+        </div>
+        <h3 class="font-display text-2xl font-semibold text-ink mb-3">Certification</h3>
+        <p class="leading-relaxed text-ink-muted">Issuance of official deviation cards and the CA20230101 certificate, accepted by maritime authorities worldwide for compliance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process gallery -->
+<section class="theme-surface py-24 bg-surface-2 border-y border-line" id="process">
+  <div class="max-w-container mx-auto px-5 md:px-16">
+    <div class="reveal mb-16 text-center">
+      <span class="text-brass font-display text-xs font-semibold uppercase tracking-wider mb-2 block">Portfolio</span>
+      <h2 class="font-display text-3xl md:text-4xl font-semibold text-ink mb-4">Service in Action</h2>
+      <p class="text-lg leading-relaxed text-ink-muted max-w-2xl mx-auto">A glimpse into our meticulous adjustment process, ensuring every vessel meets the highest standards of navigational safety. Click any photo to enlarge.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+      <button type="button" class="gallery-item reveal group cursor-pointer text-left" data-caption="Compass Inspection">
+        <span class="block aspect-[3/4] rounded-lg overflow-hidden border border-line mb-4 ambient-shadow">
+          <img alt="Compass inspection aboard a vessel" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" src="resources/3.JPG" loading="lazy"/>
+        </span>
+        <span class="font-display text-sm font-semibold text-ink text-center block">Compass Inspection</span>
+      </button>
+      <button type="button" class="gallery-item reveal reveal-delay-1 group cursor-pointer text-left" data-caption="Fine Tuning">
+        <span class="block aspect-[3/4] rounded-lg overflow-hidden border border-line mb-4 ambient-shadow">
+          <img alt="Fine tuning compensating magnets" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" src="resources/1.JPG" loading="lazy"/>
+        </span>
+        <span class="font-display text-sm font-semibold text-ink text-center block">Fine Tuning</span>
+      </button>
+      <button type="button" class="gallery-item reveal reveal-delay-2 group cursor-pointer text-left" data-caption="Deviation Analysis">
+        <span class="block aspect-[3/4] rounded-lg overflow-hidden border border-line mb-4 ambient-shadow">
+          <img alt="Deviation analysis and recording" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" src="resources/2.JPG" loading="lazy"/>
+        </span>
+        <span class="font-display text-sm font-semibold text-ink text-center block">Deviation Analysis</span>
+      </button>
+      <button type="button" class="gallery-item reveal reveal-delay-3 group cursor-pointer text-left" data-caption="Official Verification">
+        <span class="block aspect-[3/4] rounded-lg overflow-hidden border border-line mb-4 ambient-shadow">
+          <img alt="Official verification of the adjusted compass" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" src="resources/image_enhanced.png" loading="lazy"/>
+        </span>
+        <span class="font-display text-sm font-semibold text-ink text-center block">Official Verification</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Credentials -->
+<section class="theme-surface py-24 bg-card border-b border-line" id="credentials">
+  <div class="max-w-container mx-auto px-5 md:px-16">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="reveal lg:col-span-5 relative">
+        <div class="relative aspect-square rounded-full overflow-hidden border-4 border-brass ambient-shadow max-w-md mx-auto">
+          <img alt="Portrait of Capt. Lan" class="w-full h-full object-cover" src="resources/1690179667182.jpg" loading="lazy"/>
+        </div>
+      </div>
+      <div class="lg:col-span-7">
+        <span class="reveal text-brass font-display text-xs font-semibold uppercase tracking-wider mb-2 block">Professional Credentials</span>
+        <h2 class="reveal font-display text-4xl md:text-5xl font-bold text-ink mb-6 tracking-tight">Capt. Lan</h2>
+        <p class="reveal reveal-delay-1 text-lg leading-relaxed text-ink-muted mb-8 border-l-2 border-brass pl-6 italic">
+          "Precision is not an option in maritime navigation; it is the absolute standard. We ensure your instruments point true, wherever your voyage takes you."
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+          <div class="reveal reveal-delay-1 hover-lift flex items-start gap-4 p-4 border border-line rounded-lg bg-surface theme-surface">
+            <span class="material-symbols-outlined text-brass mt-1" aria-hidden="true">military_tech</span>
+            <div>
+              <h3 class="font-display text-sm font-semibold text-ink mb-1">Certified Adjuster</h3>
+              <p class="text-sm text-ink-muted">Holding CA20230101 Certification</p>
+            </div>
+          </div>
+          <div class="reveal reveal-delay-2 hover-lift flex items-start gap-4 p-4 border border-line rounded-lg bg-surface theme-surface">
+            <span class="material-symbols-outlined text-brass mt-1" aria-hidden="true">school</span>
+            <div>
+              <h3 class="font-display text-sm font-semibold text-ink mb-1">Official Training</h3>
+              <p class="text-sm text-ink-muted">Trained by internationally accepted agencies.</p>
+            </div>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-2 bg-surface-2 p-6 rounded-lg border border-line theme-surface">
+          <p class="text-ink-muted flex items-start gap-3">
+            <span class="material-symbols-outlined text-brass text-xl mt-0.5" aria-hidden="true">info</span>
+            <span>Credentials are fully documented and available for immediate review for any inquiry, audit, or port state inspection.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="theme-surface py-24 bg-surface relative" id="contact">
+  <div class="max-w-container mx-auto px-5 md:px-16">
+    <div class="reveal bg-navy text-on-navy rounded-xl overflow-hidden lift-shadow relative border border-line">
+      <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 70% 30%, #ffffff 1px, transparent 1px); background-size: 40px 40px;"></div>
+      <div class="grid grid-cols-1 md:grid-cols-2">
+        <div class="p-10 md:p-16 relative z-10">
+          <h2 class="font-display text-3xl md:text-4xl font-semibold mb-4">Request Service</h2>
+          <p class="text-on-navy-muted mb-10">Contact us to schedule an adjustment or verify credentials.</p>
+          <div class="space-y-6">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center border border-white/20 shrink-0">
+                <span class="material-symbols-outlined text-brass" aria-hidden="true">mail</span>
+              </div>
+              <div class="min-w-0">
+                <p class="font-display text-xs font-semibold text-on-navy-muted uppercase tracking-wider mb-1">Email</p>
+                <a class="font-display text-lg md:text-xl font-semibold hover:text-brass transition-colors break-all cursor-pointer" href="mailto:cebucompassadjuster@gmail.com">cebucompassadjuster@gmail.com</a>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center border border-white/20 shrink-0">
+                <span class="material-symbols-outlined text-brass" aria-hidden="true">call</span>
+              </div>
+              <div>
+                <p class="font-display text-xs font-semibold text-on-navy-muted uppercase tracking-wider mb-1">Phone</p>
+                <a class="font-display text-lg md:text-xl font-semibold hover:text-brass transition-colors cursor-pointer" href="tel:+639691269353">+63-969-126-9353</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="theme-surface bg-card text-ink p-10 md:p-16 flex flex-col justify-center border-t md:border-t-0 md:border-l border-line relative z-10">
+          <div class="mb-8">
+            <span class="material-symbols-outlined text-4xl text-brass mb-4 block" style="font-variation-settings: 'FILL' 1;" aria-hidden="true">location_on</span>
+            <h3 class="font-display text-2xl font-semibold text-ink mb-2">Based in Cebu, Philippines</h3>
+            <p class="text-ink-muted">Strategically located to serve major ports.</p>
+          </div>
+          <div class="border-t border-line pt-6">
+            <h4 class="font-display text-sm font-semibold text-ink mb-3 uppercase tracking-wider">Global Reach</h4>
+            <p class="text-ink-muted">Available to travel to other locations upon request for in-person adjustments.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="theme-surface bg-navy text-on-navy border-t-2 border-brass">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-5 md:px-16 py-16 max-w-container mx-auto">
+    <div>
+      <div class="font-display text-xl font-bold mb-6 flex items-center gap-2">
+        <svg class="w-6 h-6 text-brass" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.5 5.5-2.6 6.4-6.4 2.6 2.6-6.4 6.4-2.6Z"/>
+        </svg>
+        CEBU COMPASS
+      </div>
+      <p class="text-on-navy-muted text-sm">Professional Maritime Certification.</p>
+    </div>
+    <div>
+      <h4 class="font-display text-sm font-semibold mb-4 uppercase tracking-wider">Services</h4>
+      <ul class="space-y-3 text-sm">
+        <li><a class="text-on-navy-muted hover:text-brass transition-colors duration-200" href="#services">Magnetic Compass Adjustment</a></li>
+        <li><a class="text-on-navy-muted hover:text-brass transition-colors duration-200" href="#services">CA20230101 Certification</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-display text-sm font-semibold mb-4 uppercase tracking-wider">Location</h4>
+      <ul class="space-y-3 text-sm">
+        <li class="text-on-navy-muted">Cebu, Philippines</li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-display text-sm font-semibold mb-4 uppercase tracking-wider">Contact</h4>
+      <ul class="space-y-3 text-sm">
+        <li><a class="text-on-navy-muted hover:text-brass transition-colors duration-200" href="tel:+639691269353">+63-969-126-9353</a></li>
+        <li><a class="text-on-navy-muted hover:text-brass transition-colors duration-200 break-all" href="mailto:cebucompassadjuster@gmail.com">cebucompassadjuster@gmail.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-white/10 px-5 md:px-16 py-6 text-center">
+    <p class="text-on-navy-muted text-sm">© 2026 Cebu Magnetic Compass Adjuster. Professional Maritime Certification.</p>
+  </div>
 </footer>
-</body></html>
+
+<!-- Lightbox -->
+<div id="lightbox" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/70 p-6 opacity-0" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button id="lightbox-close" type="button" aria-label="Close image viewer"
+    class="absolute top-4 right-4 w-11 h-11 inline-flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors cursor-pointer">
+    <span class="material-symbols-outlined" aria-hidden="true">close</span>
+  </button>
+  <figure class="max-w-4xl max-h-full">
+    <img id="lightbox-img" src="" alt="" class="max-h-[80vh] w-auto mx-auto rounded-lg lift-shadow"/>
+    <figcaption id="lightbox-caption" class="text-center text-white font-display font-semibold mt-4"></figcaption>
+  </figure>
+</div>
+
+<script>
+(function () {
+  var prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- Theme toggle ---------- */
+  var themeToggle = document.getElementById("theme-toggle");
+  themeToggle.addEventListener("click", function () {
+    var isDark = document.documentElement.classList.toggle("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  });
+
+  /* ---------- Mobile menu ---------- */
+  var menuToggle = document.getElementById("menu-toggle");
+  var mobileMenu = document.getElementById("mobile-menu");
+  function closeMenu() {
+    mobileMenu.classList.add("hidden");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.querySelector(".material-symbols-outlined").textContent = "menu";
+  }
+  menuToggle.addEventListener("click", function () {
+    var open = mobileMenu.classList.toggle("hidden") === false;
+    menuToggle.setAttribute("aria-expanded", String(open));
+    menuToggle.querySelector(".material-symbols-outlined").textContent = open ? "close" : "menu";
+  });
+  mobileMenu.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", closeMenu); });
+
+  /* ---------- Header shadow on scroll ---------- */
+  var header = document.getElementById("site-header");
+  function onScroll() {
+    header.classList.toggle("header-scrolled", window.scrollY > 8);
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  /* ---------- Scroll reveal ---------- */
+  var revealEls = document.querySelectorAll(".reveal");
+  if (prefersReduced || !("IntersectionObserver" in window)) {
+    revealEls.forEach(function (el) { el.classList.add("is-visible"); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("is-visible"); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  }
+
+  /* ---------- Stat counters ---------- */
+  var counters = document.querySelectorAll(".stat-count");
+  function animateCount(el) {
+    var target = parseInt(el.dataset.target, 10);
+    if (prefersReduced) { el.textContent = target; return; }
+    var start = null, dur = 1200;
+    function step(ts) {
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  if ("IntersectionObserver" in window) {
+    var cio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { animateCount(e.target); cio.unobserve(e.target); }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(function (el) { cio.observe(el); });
+  } else {
+    counters.forEach(function (el) { el.textContent = el.dataset.target; });
+  }
+
+  /* ---------- Active nav highlighting ---------- */
+  var sections = ["services", "process", "credentials", "contact"];
+  var navLinks = document.querySelectorAll("nav[aria-label='Primary'] .nav-link");
+  if ("IntersectionObserver" in window) {
+    var sio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          navLinks.forEach(function (l) {
+            l.classList.toggle("active", l.getAttribute("href") === "#" + e.target.id);
+          });
+        }
+      });
+    }, { rootMargin: "-40% 0px -55% 0px" });
+    sections.forEach(function (id) {
+      var s = document.getElementById(id);
+      if (s) sio.observe(s);
+    });
+  }
+
+  /* ---------- Lightbox ---------- */
+  var lightbox = document.getElementById("lightbox");
+  var lbImg = document.getElementById("lightbox-img");
+  var lbCaption = document.getElementById("lightbox-caption");
+  var lbClose = document.getElementById("lightbox-close");
+  var lastFocused = null;
+
+  function openLightbox(src, alt, caption) {
+    lastFocused = document.activeElement;
+    lbImg.src = src;
+    lbImg.alt = alt;
+    lbCaption.textContent = caption;
+    lightbox.classList.remove("hidden");
+    lightbox.classList.add("flex");
+    requestAnimationFrame(function () { lightbox.classList.remove("opacity-0"); });
+    document.body.style.overflow = "hidden";
+    lbClose.focus();
+  }
+  function closeLightbox() {
+    lightbox.classList.add("opacity-0");
+    setTimeout(function () {
+      lightbox.classList.add("hidden");
+      lightbox.classList.remove("flex");
+      lbImg.src = "";
+    }, 250);
+    document.body.style.overflow = "";
+    if (lastFocused) lastFocused.focus();
+  }
+  document.querySelectorAll(".gallery-item").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var img = btn.querySelector("img");
+      openLightbox(img.src, img.alt, btn.dataset.caption);
+    });
+  });
+  lbClose.addEventListener("click", closeLightbox);
+  lightbox.addEventListener("click", function (e) { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !lightbox.classList.contains("hidden")) closeLightbox();
+  });
+})();
+</script>
+</body>
+</html>
